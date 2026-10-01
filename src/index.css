@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #123C32;
+    --primary-deep: #0A241E;
+    --primary-light: #1B5345;
+    --primary-surface: #E8F0EC;
+    --secondary: #C86B43;
+    --secondary-hover: #B25A33;
+    --secondary-surface: #FAF0EB;
+    --accent: #E8B84A;
+    --accent-light: #FCF4DD;
+    --background: #F7F5EF;
+    --surface: #FFFFFF;
+    --surface-subtle: #F0ECE3;
+    --border: #E2DDD2;
+    --text-primary: #17221F;
+    --text-secondary: #576562;
+    --text-muted: #82918D;
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Subtle tribal geometric pattern for headers and decorative strips */
+.bg-tribal-pattern {
+  background-image: radial-gradient(rgba(18, 60, 50, 0.08) 1.5px, transparent 1.5px),
+                    linear-gradient(45deg, rgba(200, 107, 67, 0.04) 25%, transparent 25%, transparent 75%, rgba(200, 107, 67, 0.04) 75%),
+                    linear-gradient(-45deg, rgba(200, 107, 67, 0.04) 25%, transparent 25%, transparent 75%, rgba(200, 107, 67, 0.04) 75%);
+  background-size: 24px 24px, 48px 48px, 48px 48px;
+}
+
+.bg-tribal-dark {
+  background-image: radial-gradient(rgba(232, 184, 74, 0.12) 1.5px, transparent 1.5px),
+                    linear-gradient(45deg, rgba(200, 107, 67, 0.08) 25%, transparent 25%, transparent 75%, rgba(200, 107, 67, 0.08) 75%);
+  background-size: 28px 28px, 56px 56px;
+}
+
+.tribal-border-top {
+  border-top: 3px solid #123C32;
+  position: relative;
+}
+.tribal-border-top::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #E8B84A;
+}
+
+/* Glassmorphism token */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 221, 210, 0.8);
+}
+
+.glass-panel-dark {
+  background: rgba(18, 60, 50, 0.92);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(232, 184, 74, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F5EF;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4BFB4;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #123C32;
+}
